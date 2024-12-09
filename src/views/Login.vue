@@ -1,9 +1,9 @@
 <script setup lang="ts">
-
+import LoginHead from "@/components/login/LoginHead.vue";
 </script>
 
 <template>
-  1
+  <LoginHead/>
 </template>
 
 <style scoped>

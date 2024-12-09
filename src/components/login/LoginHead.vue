@@ -471,7 +471,8 @@ header {
   height: 3.2em;
   width: 100%;
   z-index: 100;
-  background-color: #faf9ff;
+  //background-color: #faf9ff;
+  background-color: #F0F0F0;
   display: flex;
   position: fixed;
   top: 0;

@@ -14,6 +14,12 @@ importers:
       element-plus:
         specifier: ^2.8.0
         version: 2.9.0(vue@3.5.13(typescript@5.6.3))
+      r-swiper:
+        specifier: ^1.0.82
+        version: 1.0.82(vue@3.5.13(typescript@5.6.3))
+      swiper:
+        specifier: ^11.1.14
+        version: 11.1.15
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.6.3)
@@ -992,6 +998,11 @@ packages:
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
 
+  r-swiper@1.0.82:
+    resolution: {integrity: sha512-OAl49Kkp38M7YJUDAyaM8Cw27QVV9eFAcifH+R21tMmcC1D6EMrbMVEdlQCpzHVD5VIODHTj1EvnhtXFCNaIhw==}
+    peerDependencies:
+      vue: ^3.0.0
+
   read-package-json-fast@4.0.0:
     resolution: {integrity: sha512-qpt8EwugBWDw2cgE2W+/3oxC+KTez2uSVR8JU9Q36TXPAGCaozfQUs59v4j4GFpWTaw0i6hAZSvOmu1J0uOEUg==}
     engines: {node: ^18.17.0 || >=20.5.0}
@@ -1055,6 +1066,10 @@ packages:
 
   svg-tags@1.0.0:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}
+
+  swiper@11.1.15:
+    resolution: {integrity: sha512-IzWeU34WwC7gbhjKsjkImTuCRf+lRbO6cnxMGs88iVNKDwV+xQpBCJxZ4bNH6gSrIbbyVJ1kuGzo3JTtz//CBw==}
+    engines: {node: '>= 4.7.0'}
 
   totalist@3.0.1:
     resolution: {integrity: sha512-sf4i37nQ2LBx4m3wB74y+ubopq6W/dIzXg0FDGjsYnZHVa1Da8FH853wlL2gtUhg+xJXjfk3kUZS3BRoQeoQBQ==}
@@ -2092,6 +2107,10 @@ snapshots:
 
   proxy-from-env@1.1.0: {}
 
+  r-swiper@1.0.82(vue@3.5.13(typescript@5.6.3)):
+    dependencies:
+      vue: 3.5.13(typescript@5.6.3)
+
   read-package-json-fast@4.0.0:
     dependencies:
       json-parse-even-better-errors: 4.0.0
@@ -2157,6 +2176,8 @@ snapshots:
       copy-anything: 3.0.5
 
   svg-tags@1.0.0: {}
+
+  swiper@11.1.15: {}
 
   totalist@3.0.1: {}
 

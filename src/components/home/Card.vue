@@ -3,7 +3,7 @@
     <el-card>
       <el-row>
         <el-col class="column1">
-          <img src="../assets/logo.jpg" alt="图片正在加载中..." class="logo"/>
+          <img src="@/assets/logo.svg" alt="图片正在加载中..." class="logo"/>
           <div class="content">
             <h2>Intelligent-RS——基于深度学习的遥感图像智能处理平台</h2>
             <p>

@@ -11,12 +11,16 @@
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@fortawesome/free-solid-svg-icons": "^6.7.1",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
     "axios": "^1.7.4",
     "element-plus": "^2.8.0",
     "vue": "^3.5.13",
     "vue-router": "^4.4.3",
     "r-swiper": "^1.0.82",
-    "swiper": "^11.1.14"
+    "swiper": "^11.1.14",
+    "echarts": "^5.5.1"
   },
   "devDependencies": {
     "@element-plus/icons-vue": "^2.3.1",

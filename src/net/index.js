@@ -25,10 +25,11 @@ function takeAccessToken() {
     return authObj.token
 }
 
-function storeAccessToken(remember, token, expire) {
+function storeAccessToken(remember, token, expire, username) {
     const authObj = {
         token: token,
-        expire: expire
+        expire: expire,
+        username: username,
     }
     const str = JSON.stringify(authObj)
     if (remember)
@@ -78,21 +79,21 @@ function post(url, data, success, failure = defaultFailure) {
 }
 
 function login(username, password, remember, success, failure = defaultFailure) {
-    internalPost('/api/auth/login', {
+    internalPost('http://localhost:8080/api/auth/login', {
         username: username,
         password: password
     }, {
         // security只支持表单提交，而默认是JSON
         'Content-Type': 'application/x-www-form-urlencoded'
     }, (data) => {
-        storeAccessToken(remember, data.token, data.expire)
+        storeAccessToken(remember, data.token, data.expire, data.username)
         ElMessage.success(`登录成功，欢迎 ${data.username} 来到我们的系统`)
         success(data)
     }, failure)
 }
 
 function logout(success, failure = defaultFailure) {
-    get('/api/auth/logout', () => {
+    get('http://localhost:8080/api/auth/logout', () => {
         deleteAccessToken()
         ElMessage.success(`退出登录成功，欢迎您再次使用`)
         success()

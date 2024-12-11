@@ -7,13 +7,13 @@
     <div class="navbar">
       <el-dropdown class="nav-action-item" trigger="click">
         <div class="person">
-          <FontAwesomeIcon :icon="faUser" style="margin-right: 5px;" />
-          <span>admin</span>
+          <FontAwesomeIcon :icon="faUser" style="margin-right: 5px;"/>
+          <span>{{ username }}</span>
         </div>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item @click="logout">
-              注销登出
+            <el-dropdown-item @click="userLogout">
+              退出登录
             </el-dropdown-item>
           </el-dropdown-menu>
         </template>
@@ -23,15 +23,18 @@
 </template>
 
 <script lang="ts" setup>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
-import { ElDropdown, ElDropdownItem, ElDropdownMenu } from 'element-plus'
+import {ref, onMounted} from "vue";
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
+import {faUser} from '@fortawesome/free-solid-svg-icons'
+import {ElDropdown, ElDropdownItem, ElDropdownMenu} from 'element-plus'
+import router from "@/router/index.ts";
+import {logout} from "@/net/index.js";
 
 let isDarkTheme = false;
 let isWatermarkEnabled = false;
 
 const toggleTheme = () => {
-  isDarkTheme =!isDarkTheme;
+  isDarkTheme = !isDarkTheme;
   if (isDarkTheme) {
     document.documentElement.classList.add('dark-theme');
   } else {
@@ -40,7 +43,7 @@ const toggleTheme = () => {
 };
 
 const toggleWatermark = () => {
-  isWatermarkEnabled =!isWatermarkEnabled;
+  isWatermarkEnabled = !isWatermarkEnabled;
   if (isWatermarkEnabled) {
     const watermark = document.createElement('div');
     watermark.textContent = 'Intelligent-RS';
@@ -58,9 +61,30 @@ const toggleWatermark = () => {
   }
 };
 
-const logout = () => {
-  // 注销逻辑
+const userLogout = () => {
+  logout(() => router.push('/login'))
 };
+
+const username = ref<string>('');
+
+const getUsernameFromStorage = (): string => {
+  const authStr = localStorage.getItem('access_token') || sessionStorage.getItem('access_token');
+  if (authStr) {
+    try {
+      const authObj = JSON.parse(authStr);
+      return authObj.username || '未知用户';
+    } catch (e) {
+      console.error('无法解析认证信息:', e);
+      return '未知用户';
+    }
+  }
+  return '未登录';
+};
+
+onMounted(() => {
+  const storedUsername = getUsernameFromStorage();
+  username.value = storedUsername !== '未登录' ? storedUsername : '';
+});
 </script>
 
 <style scoped>
@@ -71,20 +95,24 @@ const logout = () => {
   padding: 0 10px;
   height: 50px;
 }
+
 .navbar-container p {
   font-size: 14px;
   color: #cccccc;
   flex: 16;
 }
+
 .navbar-container .navbar {
   display: flex;
   flex: 1;
 }
+
 .nav-action-item {
   cursor: pointer;
   margin: 0 1vw;
   flex: 2;
 }
+
 .nav-action-item .person {
   width: 100%;
   display: flex;

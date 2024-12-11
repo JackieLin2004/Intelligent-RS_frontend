@@ -328,7 +328,7 @@ const register_rules = {
 const askCode =() => {
   if (isEmailValid) {
     coldTime.value = 60
-    get(`/auth/ask-code?email=${register_form.email}&type=register`, () => {
+    get(`http://localhost:8080/api/auth/ask-code?email=${register_form.email}&type=register`, () => {
       ElMessage.success(`验证码已发送到邮箱: ${register_form.email}，请注意查收`)
       const handle = setInterval(() => {
         coldTime.value--
@@ -350,7 +350,7 @@ const isEmailValid = computed(() => /^[\w.-]+@[\w.-]+\.\w+$/.test(register_form.
 const register =() => {
   register_formRef.value.validate((isValid) => {
     if (isValid) {
-      post('/auth/register', {...register_form}, () => {
+      post('http://localhost:8080/api/auth/register', {...register_form}, () => {
         ElMessage('注册成功，欢迎加入我们')
         registerVisible.value = false
         loginVisible.value = true
@@ -404,7 +404,7 @@ const reset_rules = {
 const reset_askCode =() => {
   if (reset_isEmailValid) {
     reset_coldTime.value = 60
-    get(`/auth/ask-code?email=${reset_form.email}&type=reset`, () => {
+    get(`http://localhost:8080/api/auth/ask-code?email=${reset_form.email}&type=reset`, () => {
       ElMessage.success(`验证码已发送到邮箱: ${reset_form.email}，请注意查收`)
       const handle = setInterval(() => {
         reset_coldTime.value--
@@ -424,7 +424,7 @@ const reset_askCode =() => {
 const confirmReset =() => {
   reset_formRef.value.validate((isValid) => {
     if (isValid) {
-      post('/auth/reset-confirm', {
+      post('http://localhost:8080/api/auth/reset-confirm', {
         email: reset_form.email,
         code: reset_form.code
       }, () => active.value++)
@@ -435,7 +435,7 @@ const confirmReset =() => {
 const doReset =() => {
   reset_formRef.value.validate((isValid) => {
     if (isValid) {
-      post('/auth/reset-password', {...reset_form}, () => {
+      post('http://localhost:8080/api/auth/reset-password', {...reset_form}, () => {
         ElMessage.success('密码重置成功，请重新登录')
         registerVisible.value = false
         loginVisible.value = true

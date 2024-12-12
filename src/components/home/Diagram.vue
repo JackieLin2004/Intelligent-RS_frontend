@@ -2,10 +2,37 @@
   <div class="container">
     <el-row :gutter="10" class="mt-5">
       <el-col :xs="24" :span="24">
-        <el-card style="height: 20vw; width: 100%">
-          <el-scrollbar>
-            <div id="consequence" style="width: 100%; height: 18vw" />
-          </el-scrollbar>
+        <el-card style="width: 100%">
+          <div class="chart-container">
+            <LogVisualizerFenLei log-file-path="/logs/AlexNet.log" />
+            <LogVisualizerFenLei log-file-path="/logs/DenseNet.log" />
+            <LogVisualizerFenLei log-file-path="/logs/VGGNet.log" />
+          </div>
+          <div class="chart-container">
+            <LogVisualizerFenLei log-file-path="/logs/ResNeXt.log" />
+            <LogVisualizerFenLei log-file-path="/logs/SwinTransformer.log" />
+            <LogVisualizerFenLei log-file-path="/logs/GoogleNet.log" />
+          </div>
+        </el-card>
+        <el-card style="width: 100%">
+          <div class="chart-container">
+            <LogVisualizerColor log-file-path="/logs/Colorization2.log" />
+            <LogVisualizerColor2 log-file-path="/logs/Colorization2.log" />
+          </div>
+        </el-card>
+        <el-card style="width: 100%">
+          <div class="chart-container">
+            <LogVisualizerChaoFen log-file-path="/logs/ISRGAN.log" />
+            <LogVisualizerChaoFen log-file-path="/logs/SRGAN.log" />
+          </div>
+          <div class="chart-container">
+            <LogVisualizerChaoFen2 log-file-path="/logs/SRResNet.log" />
+            <LogVisualizerChaoFen2 log-file-path="/logs/SRResNet.log" />
+          </div>
+<!--          <div class="chart-container">-->
+<!--            <LogVisualizerChaoFen3 log-file-path="/logs/ESRGAN.log" />-->
+<!--            <LogVisualizerChaoFen3 log-file-path="/logs/ESRGAN.log" />-->
+<!--          </div>-->
         </el-card>
       </el-col>
     </el-row>
@@ -13,77 +40,24 @@
 </template>
 
 <script setup lang="ts">
-import * as echarts from "echarts";
-import { onMounted, nextTick } from "vue";
-
-onMounted(() => {
-  nextTick(() => {
-    const chartDom = document.getElementById("consequence");
-    if (chartDom) {
-      const myChart = echarts.init(chartDom);
-      const option = {
-        title: {
-          text: "模型效果对比",
-        },
-        tooltip: {
-          trigger: "axis",
-        },
-        legend: {
-          data: ["模型一", "模型二"],
-        },
-        grid: {
-          left: "3%",
-          right: "4%",
-          bottom: "3%",
-          containLabel: true,
-        },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
-        xAxis: {
-          type: "category",
-          boundaryGap: false,
-          data: [
-            "0",
-            "10",
-            "20",
-            "30",
-            "40",
-            "50",
-            "60",
-            "70",
-            "80",
-            "90",
-            "100",
-          ],
-        },
-        yAxis: {
-          type: "value",
-        },
-        series: [
-          {
-            name: "模型一",
-            type: "line",
-            data: [120, 200, 150, 80, 70, 65, 58, 40, 23, 15, 8],
-          },
-          {
-            name: "模型二",
-            type: "line",
-            data: [80, 130, 110, 140, 90, 75, 62, 43, 25, 10, 3],
-          },
-        ],
-      };
-      myChart.setOption(option);
-    }
-  });
-});
+import LogVisualizerFenLei from "@/components/home/visual/LogVisualizerFenLei.vue";
+import LogVisualizerColor from "@/components/home/visual/LogVisualizerColor.vue";
+import LogVisualizerChaoFen from "@/components/home/visual/LogVisualizerChaoFen.vue";
+import LogVisualizerChaoFen2 from "@/components/home/visual/LogVisualizerChaoFen2.vue";
+import LogVisualizerChaoFen3 from "@/components/home/visual/LogVisualizerChaoFen3.vue";
+import LogVisualizerColor2 from "@/components/home/visual/LogVisualizerColor2.vue";
+import {ElCard} from "element-plus";
 </script>
 
 <style scoped>
 .container {
   position: relative;
   padding: 24px;
+}
+
+.chart-container {
+  display: flex;
+  flex-wrap: wrap; /* 允许换行 */
+  gap: 20px; /* 图表之间的间距 */
 }
 </style>

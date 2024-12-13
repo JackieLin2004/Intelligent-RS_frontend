@@ -17,7 +17,7 @@ import Chart from 'chart.js/auto';
 export default {
   data() {
     return {
-      logFilePath: 'ESRGAN.log', // 日志文件路径
+      logFilePath: 'ESRGAN.logs', // 日志文件路径
       showCharts: false, // 是否显示图表
       uniqueId: Math.random().toString(36).substr(2, 9), // 唯一ID用于区分图表
       logData: [], // 日志数据
@@ -40,12 +40,12 @@ export default {
       try {
         const response = await fetch(this.logFilePath); // 使用 fetch 读取文件
         if (!response.ok) {
-          throw new Error('Failed to load log file');
+          throw new Error('Failed to load logs file');
         }
         const content = await response.text(); // 获取文件内容
         this.parseLogFile(content); // 解析文件内容
       } catch (error) {
-        console.error('Error loading log file:', error);
+        console.error('Error loading logs file:', error);
         this.showCharts = false; // 如果加载失败，不显示图表
       }
     },

@@ -11,12 +11,12 @@
           <div class="chart-container">
             <LogVisualizerFenLei log-file-path="/logs/ResNeXt.log" />
             <LogVisualizerFenLei log-file-path="/logs/SwinTransformer.log" />
-            <LogVisualizerFenLei log-file-path="/logs/GoogleNet.log" />
+            <LogVisualizerFenLei log-file-path="/logs/GoogLeNet.log" />
           </div>
         </el-card>
         <el-card style="width: 100%">
           <div class="chart-container">
-            <LogVisualizerColor log-file-path="/logs/Colorization2.log" />
+            <LogVisualizerColor log-file-path="/logs/Colorization1.log" />
             <LogVisualizerColor2 log-file-path="/logs/Colorization2.log" />
           </div>
         </el-card>
@@ -30,8 +30,8 @@
             <LogVisualizerChaoFen2 log-file-path="/logs/SRResNet.log" />
           </div>
 <!--          <div class="chart-container">-->
-<!--            <LogVisualizerChaoFen3 log-file-path="/logs/ESRGAN.log" />-->
-<!--            <LogVisualizerChaoFen3 log-file-path="/logs/ESRGAN.log" />-->
+<!--            <LogVisualizerChaoFen3 logs-file-path="/logs/ESRGAN.logs" />-->
+<!--            <LogVisualizerChaoFen3 logs-file-path="/logs/ESRGAN.logs" />-->
 <!--          </div>-->
         </el-card>
       </el-col>

@@ -27,8 +27,12 @@
           </div>
           <div class="chart-container">
             <LogVisualizerChaoFen2 log-file-path="/logs/SRResNet.log" />
-            <LogVisualizerChaoFen3 log-file-path="/logs/ESRGAN.log" />
+            <LogVisualizerChaoFen2 log-file-path="/logs/SRResNet.log" />
           </div>
+<!--          <div class="chart-container">-->
+<!--            <LogVisualizerChaoFen3 log-file-path="/logs/ESRGAN.log" />-->
+<!--            <LogVisualizerChaoFen3 log-file-path="/logs/ESRGAN.log" />-->
+<!--          </div>-->
         </el-card>
       </el-col>
     </el-row>

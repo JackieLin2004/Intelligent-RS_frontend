@@ -1,13 +1,16 @@
 <template>
   <div class="navbar-container">
     <!-- 导航栏左侧 -->
-    <p>首页</p>
+    <div class="header-left">
+      <img src="@/assets/logo.svg" alt="logo" style="width: 2.5em;">
+      <h3 style="font-size:1em; margin-left: 0.5vw; color: #e3e4f9">Intelligent-RS</h3>
+    </div>
     <!-- 导航栏右侧 -->
     <!-- 用户头像 -->
     <div class="navbar">
       <el-dropdown class="nav-action-item" trigger="click">
         <div class="person">
-          <FontAwesomeIcon :icon="faUser" style="margin-right: 5px;"/>
+          <FontAwesomeIcon :icon="faUser" style="margin-right: 5px; color: #e3e4f9"/>
           <span>{{ username }}</span>
         </div>
         <template #dropdown>
@@ -91,17 +94,15 @@ onMounted(() => {
 .navbar-container {
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background: linear-gradient(135deg, #000428, #004e92);
   padding: 0 10px;
   height: 50px;
 }
 
-.navbar-container p {
-  font-size: 14px;
-  color: #cccccc;
+.header-left {
   flex: 16;
+  display: flex;
 }
-
 .navbar-container .navbar {
   display: flex;
   flex: 1;

@@ -12,14 +12,14 @@
           <div class="chart-container">
             <LogVisualizerFenLei log-file-path="/logs/ResNeXt.log" />
             <LogVisualizerFenLei log-file-path="/logs/SwinTransformer.log" />
-            <LogVisualizerFenLei log-file-path="/logs/GoogleNet.log" />
+            <LogVisualizerFenLei log-file-path="/logs/GoogLeNet.log" />
           </div>
         </el-card>
 
         <!-- 第二个卡片 -->
         <el-card class="transparent-card">
           <div class="chart-container">
-            <LogVisualizerColor log-file-path="/logs/Colorization2.log" />
+            <LogVisualizerColor log-file-path="/logs/Colorization1.log" />
             <LogVisualizerColor2 log-file-path="/logs/Colorization2.log" />
           </div>
         </el-card>

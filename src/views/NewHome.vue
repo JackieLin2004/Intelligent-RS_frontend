@@ -1,5 +1,5 @@
 <template>
-  <div :style="`width: 100%; height: 99vh`" flex="~ col" justify-center items-center bg-blue>
+  <div :style="`width: 100%; height: 100%`" flex="~ col" justify-center items-center bg-blue>
     <!-- 外部框框 -->
     <Navigate/>
     <dv-border-box9 ref="borderRef" :style="`width: 100%; height: 100%; position: relative; background: linear-gradient(135deg, #000428, #004e92);`">

@@ -2,7 +2,8 @@ import {createRouter, createWebHashHistory} from 'vue-router'
 import {unauthorized} from "@/net/index.js";
 
 import Login from "@/views/Login.vue";
-import Home from "@/views/Home.vue";
+import NewHome from "@/views/NewHome.vue";
+import Visualization from "@/views/Visualization.vue";
 
 const router = createRouter({
     // 路由器工作模式
@@ -16,11 +17,16 @@ const router = createRouter({
         {
             name: 'home',
             path: '/home',
-            component: Home
+            component: NewHome
         },
         {
             path: '/',
             redirect: '/login'
+        },
+        {
+            name: 'visual',
+            path: '/visual',
+            component: Visualization
         }
     ]
 })

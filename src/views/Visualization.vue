@@ -2,7 +2,7 @@
   <div :style="`width: 100%; height: 100%;`" flex="~ col" justify-center items-center bg-blue>
     <!-- 外部框框 -->
     <Navigate/>
-    <dv-border-box9 ref="borderRef" :style="`width: 100%; height: 435vh; position: relative; background: linear-gradient(135deg, #000428, #004e92);`">
+    <dv-border-box9 ref="borderRef" :style="`width: 100%; height: 450vh; position: relative; background: linear-gradient(135deg, #000428, #004e92);`">
       <div :style="`width: 100%;`" color-white flex justify-center items-center>
         <div style="flex: 1; display: flex; justify-content: center; align-items: center; padding-top: 1rem;">
           <div small-bg>

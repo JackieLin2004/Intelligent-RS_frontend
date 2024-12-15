@@ -11,7 +11,7 @@
       <el-dropdown class="nav-action-item" trigger="click">
         <div class="person">
           <FontAwesomeIcon :icon="faUser" style="margin-right: 5px; color: #e3e4f9"/>
-          <span>{{ username }}</span>
+          <span style="color: #dad4d4">{{ username }}</span>
         </div>
         <template #dropdown>
           <el-dropdown-menu>

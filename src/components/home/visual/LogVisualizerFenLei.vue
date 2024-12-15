@@ -1,6 +1,6 @@
 <template>
   <div class="chart-wrapper">
-    <h2>{{ logFileName }}</h2>
+    <h2 style="color: #e3e4f9">{{ logFileName }}</h2>
     <div v-if="showCharts" class="chart-area">
       <canvas :id="`lossChart-${uniqueId}`" class="chart"></canvas>
       <canvas :id="`accuracyChart-${uniqueId}`" class="chart"></canvas>
@@ -113,6 +113,40 @@ export default {
             title: {
               display: true,
               text: 'Training and Validation Loss',
+              color: '#fff', // 标题颜色改为白色
+            },
+            legend: {
+              labels: {
+                color: '#fff', // 图例文字颜色改为白色
+              },
+            },
+          },
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: 'Epoch',
+                color: '#fff', // 横坐标标题颜色改为白色
+              },
+              ticks: {
+                color: '#fff', // 横坐标刻度文字颜色改为白色
+              },
+              grid: {
+                color: 'rgba(255, 255, 255, 0.2)', // 横坐标网格线颜色改为半透明白色
+              },
+            },
+            y: {
+              title: {
+                display: true,
+                text: 'Loss',
+                color: '#fff', // 纵坐标标题颜色改为白色
+              },
+              ticks: {
+                color: '#fff', // 纵坐标刻度文字颜色改为白色
+              },
+              grid: {
+                color: 'rgba(255, 255, 255, 0.2)', // 纵坐标网格线颜色改为半透明白色
+              },
             },
           },
         },
@@ -145,6 +179,40 @@ export default {
             title: {
               display: true,
               text: 'Training and Validation Accuracy',
+              color: '#fff', // 标题颜色改为白色
+            },
+            legend: {
+              labels: {
+                color: '#fff', // 图例文字颜色改为白色
+              },
+            },
+          },
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: 'Epoch',
+                color: '#fff', // 横坐标标题颜色改为白色
+              },
+              ticks: {
+                color: '#fff', // 横坐标刻度文字颜色改为白色
+              },
+              grid: {
+                color: 'rgba(255, 255, 255, 0.2)', // 横坐标网格线颜色改为半透明白色
+              },
+            },
+            y: {
+              title: {
+                display: true,
+                text: 'Accuracy',
+                color: '#fff', // 纵坐标标题颜色改为白色
+              },
+              ticks: {
+                color: '#fff', // 纵坐标刻度文字颜色改为白色
+              },
+              grid: {
+                color: 'rgba(255, 255, 255, 0.2)', // 纵坐标网格线颜色改为半透明白色
+              },
             },
           },
         },
@@ -171,6 +239,40 @@ export default {
             title: {
               display: true,
               text: 'F1 Score',
+              color: '#fff', // 标题颜色改为白色
+            },
+            legend: {
+              labels: {
+                color: '#fff', // 图例文字颜色改为白色
+              },
+            },
+          },
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: 'Epoch',
+                color: '#fff', // 横坐标标题颜色改为白色
+              },
+              ticks: {
+                color: '#fff', // 横坐标刻度文字颜色改为白色
+              },
+              grid: {
+                color: 'rgba(255, 255, 255, 0.2)', // 横坐标网格线颜色改为半透明白色
+              },
+            },
+            y: {
+              title: {
+                display: true,
+                text: 'F1 Score',
+                color: '#fff', // 纵坐标标题颜色改为白色
+              },
+              ticks: {
+                color: '#fff', // 纵坐标刻度文字颜色改为白色
+              },
+              grid: {
+                color: 'rgba(255, 255, 255, 0.2)', // 纵坐标网格线颜色改为半透明白色
+              },
             },
           },
         },

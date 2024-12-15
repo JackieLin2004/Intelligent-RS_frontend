@@ -1,6 +1,6 @@
 <template>
   <div class="chart-wrapper">
-    <h2>{{ logFileName }}</h2>
+    <h2 style="color: #e3e4f9">{{ logFileName }}</h2>
     <div v-if="showCharts" class="chart-area">
       <canvas :id="`lossChart-${uniqueId}`" class="chart"></canvas>
     </div>
@@ -169,6 +169,12 @@ export default {
             title: {
               display: true,
               text: 'Loss and Metrics Over Epochs',
+              color: '#fff', // 标题颜色改为白色
+            },
+            legend: {
+              labels: {
+                color: '#fff', // 图例文字颜色改为白色
+              },
             },
           },
           scales: {
@@ -176,12 +182,26 @@ export default {
               title: {
                 display: true,
                 text: 'Epoch',
+                color: '#fff', // 横坐标标题颜色改为白色
+              },
+              ticks: {
+                color: '#fff', // 横坐标刻度文字颜色改为白色
+              },
+              grid: {
+                color: 'rgba(255, 255, 255, 0.2)', // 横坐标网格线颜色改为半透明白色
               },
             },
             y: {
               title: {
                 display: true,
                 text: 'Value',
+                color: '#fff', // 纵坐标标题颜色改为白色
+              },
+              ticks: {
+                color: '#fff', // 纵坐标刻度文字颜色改为白色
+              },
+              grid: {
+                color: 'rgba(255, 255, 255, 0.2)', // 纵坐标网格线颜色改为半透明白色
               },
             },
           },
